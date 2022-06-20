@@ -1,6 +1,4 @@
 version: '2.1'
-orbs:
-  kubernetes: circleci/kubernetes@1.24.2
 jobs:
   tracking-car:
     docker:
