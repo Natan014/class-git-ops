@@ -1,0 +1,77 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-datasources
+  namespace: makuko
+  uid: d0c03956-bb75-4d32-99d5-2448a2ca485b
+  resourceVersion: '7644392'
+  creationTimestamp: '2022-06-17T20:32:38Z'
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: >
+      {"apiVersion":"v1","data":{"traccar.xml":"\n\u003c?xml version='1.0'
+      encoding='UTF-8'?\u003e\n\n\u003c!DOCTYPE properties SYSTEM
+      'http://java.sun.com/dtd/properties.dtd'\u003e\n\n\u003cproperties\u003e\n\n   
+      \u003centry
+      key='config.default'\u003e./config/default.xml\u003c/entry\u003e\n\n   
+      \u003c!--\n\n    This is the main configuration file. All your
+      configuration parameters should be placed in this file.\n\n    Default
+      configuration parameters are located in the \"default.xml\" file. You
+      should not modify it to avoid issues\n    with upgrading to a new version.
+      Parameters in the main config file override values in the default file. Do
+      not\n    remove \"config.default\" parameter from this file unless you
+      know what you are doing.\n\n    For list of available parameters see
+      following page: https://www.traccar.org/configuration-file/\n\n   
+      --\u003e\n\n    \u003centry
+      key='database.driver'\u003ecom.mysql.jdbc.Driver\u003c/entry\u003e\n   
+      \u003centry
+      key='database.url'\u003ejdbc:mysql://svc-mysql:3306/track?serverTimezone=UTC\u0026allowPublicKeyRetrieval=true\u0026useSSL=false\u0026allowMultiQueries=true\u0026autoReconnect=true\u0026useUnicode=yes\u0026
+      characterEncoding=UTF-8\u0026sessionVariables=sql_mode=''\u003c/entry\u003e\n   
+      \u003centry key='database.user'\u003eadmtt\u003c/entry\u003e\n   
+      \u003centry key='database.password'\u003epassword\u003c/entry\u003e\n\n   
+      \n\n\u003c/properties\u003e"},"kind":"ConfigMap","metadata":{"annotations":{},"name":"mysql-datasources","namespace":"makuko"}}
+  managedFields:
+    - manager: kubectl-client-side-apply
+      operation: Update
+      apiVersion: v1
+      time: '2022-06-17T20:32:38Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data:
+          .: {}
+          f:traccar.xml: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+  selfLink: /api/v1/namespaces/makuko/configmaps/mysql-datasources
+data:
+  traccar.xml: |-
+
+    <?xml version='1.0' encoding='UTF-8'?>
+
+    <!DOCTYPE properties SYSTEM 'http://java.sun.com/dtd/properties.dtd'>
+
+    <properties>
+
+        <entry key='config.default'>./config/default.xml</entry>
+
+        <!--
+
+        This is the main configuration file. All your configuration parameters should be placed in this file.
+
+        Default configuration parameters are located in the "default.xml" file. You should not modify it to avoid issues
+        with upgrading to a new version. Parameters in the main config file override values in the default file. Do not
+        remove "config.default" parameter from this file unless you know what you are doing.
+
+        For list of available parameters see following page: https://www.traccar.org/configuration-file/
+
+        -->
+
+        <entry key='database.driver'>com.mysql.jdbc.Driver</entry>
+        <entry key='database.url'>jdbc:mysql://svc-mysql:3306/track?serverTimezone=UTC&allowPublicKeyRetrieval=true&useSSL=false&allowMultiQueries=true&autoReconnect=true&useUnicode=yes& characterEncoding=UTF-8&sessionVariables=sql_mode=''</entry>
+        <entry key='database.user'>admtt</entry>
+        <entry key='database.password'>password</entry>
+
+        
+
+    </properties>

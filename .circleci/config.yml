@@ -1,0 +1,15 @@
+version: '2.1'
+orbs:
+  kubernetes: circleci/kubernetes@x.y.z
+jobs:
+  create-update:
+    docker:
+      - image: 'traccar/traccar:latest'
+    steps:
+      - checkout
+      - kubernetes/install-kubectl
+      - kubernetes/create-or-update-resource:
+          get-rollout-status: true
+          resource-file-path: manifesto.yml
+          resource-name: deployment/nginx-deployment
+          show-kubectl-command: true
