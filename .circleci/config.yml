@@ -17,10 +17,9 @@ jobs:
     docker:
       - image: 'mysql:5.6'
     steps:
-      - checkout
       - kubernetes/install-kubectl
       - kubernetes/create-or-update-resource:
           get-rollout-status: true
           resource-file-path: manifestos/mysql.yml
           resource-name: deployment/traking-car
-          show-kubectl-command: true      
+          show-kubectl-command: true   
