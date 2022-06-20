@@ -24,4 +24,12 @@ jobs:
           get-rollout-status: true
           resource-file-path: manifestos/mysql.yml
           resource-name: deployment/traking-car
-          show-kubectl-command: true   
+          show-kubectl-command: true  
+
+workflows:
+   Exec:
+    jobs:
+      - tracking-car:
+      - mysqldb:
+
+    
