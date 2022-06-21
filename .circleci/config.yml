@@ -9,5 +9,6 @@ jobs:
       - image: 'traccar/traccar:latest'
     steps:
      - run:
-       command: |
+        name: vai q!    
+        command: |
           echo "tudo certinho"
