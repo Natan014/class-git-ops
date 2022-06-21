@@ -3,7 +3,8 @@ kind: StatefulSet
 metadata:
   name: mysql
   namespace: makuko
-spec:  
+spec:
+  serviceName: mysql
   replicas: 1
   selector:
     matchLabels:
