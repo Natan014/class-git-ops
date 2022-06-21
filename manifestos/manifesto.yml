@@ -18,8 +18,7 @@ spec:
       - name: tracking-car
         image: traccar/traccar:latest
         ports:
-        - containerPort: 8082
-          
+        - containerPort: 8080          
 
 ---
 # NodePort para o tracking-car
