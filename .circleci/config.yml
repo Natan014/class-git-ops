@@ -31,5 +31,6 @@ workflows:
     jobs:
       - tracking-car:
       - mysqldb:
-
+          requires:
+            - tracking-car
     
