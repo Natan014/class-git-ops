@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: tracking-car
+  namespace: makuko
 spec:
   replicas: 3
   selector:
@@ -26,6 +27,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: tracking-port
+  namespace: makuko
 spec:  
   type: NodePort
   selector:

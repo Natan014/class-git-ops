@@ -1,18 +1,13 @@
 version: 2.1
 
+orbs:
+  kubernetes: circleci/kubernetes@1.3.0
+
 jobs:
   tracking-car:
     docker:
       - image: 'traccar/traccar:latest'
     steps:
-      
-      - kubernetes/install-kubectl
-      - kubernetes/create-or-update-resource:
-          get-rollout-status: true
-          resource-file-path: manifestos
-          resource-name: deployment/traking-car
-          show-kubectl-command: true
-
-
-
-    
+     run:
+     command: |
+      echo "tudo certinho"
