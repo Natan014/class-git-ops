@@ -8,29 +8,14 @@ jobs:
     docker:
       - image: 'traccar/traccar:latest'
     steps:
-      - checkout
+      
       - kubernetes/install-kubectl
       - kubernetes/create-or-update-resource:
           get-rollout-status: true
           resource-file-path: manifestos
           resource-name: deployment/traking-car
           show-kubectl-command: true
-  mysqldb:
-    docker:
-      - image: 'mysql:5.6'
-    steps:
-      - kubernetes/install-kubectl
-      - kubernetes/create-or-update-resource:
-          get-rollout-status: true
-          resource-file-path: manifestos/mysql.yml
-          resource-name: deployment/traking-car
-          show-kubectl-command: true  
 
-workflows:
-   Execution:
-    jobs:
-      - tracking-car:
-      - mysqldb:
-          requires:
-            - tracking-car
+
+
     
