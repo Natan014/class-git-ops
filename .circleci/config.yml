@@ -27,7 +27,7 @@ jobs:
           show-kubectl-command: true  
 
 workflows:
-   Exec:
+   Execution:
     jobs:
       - tracking-car:
       - mysqldb:
