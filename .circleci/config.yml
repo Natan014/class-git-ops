@@ -8,6 +8,6 @@ jobs:
     docker:
       - image: 'traccar/traccar:latest'
     steps:
-     run:
-     command: |
-      echo "tudo certinho"
+     - run:
+       command: |
+          echo "tudo certinho"
