@@ -5,7 +5,7 @@ metadata:
   name: tracking-car
   namespace: makuko
 spec:
-  replicas: 4
+  replicas: 1
   selector:
    matchLabels:
     app: tracking-car
@@ -43,7 +43,7 @@ metadata:
   name: rabbitmq
   namespace: makuko
 spec:
-  replicas: 1
+  replicas: 3
   selector:
    matchLabels:
     app: rabbitmq
