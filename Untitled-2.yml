@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mongodb
+  namespace: makuko
+spec:
+  serviceName: mongodb
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongodb
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: mongodb
+    spec:
+      containers:
+        - name: mongodb
+          image: mongo:latest
+          ports:
+            - containerPort: 27017
+              protocol: TCP
+
+
+---  
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-mongodb
+  namespace: makuko
+spec:
+  ports:
+    - name: svc-mongodb
+      protocol: TCP
+      port: 27017
+  selector:
+    app: svc-mongodb
+  clusterIP: None              
