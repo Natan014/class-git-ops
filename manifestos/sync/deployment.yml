@@ -7,13 +7,13 @@ spec:
   selector:
     matchLabels:
       app: trivial-go-web-app
-        template:
-          metadata:
-            labels:
-              app: trivial-go-web-app
-          spec:
-            containers:
-            - name: webserver-simple
-              image: docker.io/kostiscodefresh/gitops-simple-app:v1.0
-              ports:
-              - containerPort: 8080
+  template:
+    metadata:
+      labels:
+        app: trivial-go-web-app
+    spec:
+      containers:
+      - name: webserver-simple
+        image: docker.io/kostiscodefresh/gitops-simple-app:v1.0
+        ports:
+        - containerPort: 8080
